@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class Sgas::Rails::Middleware::Test < ActiveSupport::TestCase
+class Sgas::Middleware::Test < ActiveSupport::TestCase
   test "truth" do
-    assert_kind_of Module, Sgas::Rails::Middleware
+    assert_kind_of Module, Sgas::Middleware
   end
 end

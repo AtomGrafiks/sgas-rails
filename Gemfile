@@ -15,3 +15,5 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 gem 'faraday', '~> 0.15'
 gem 'awesome_print'
+gem 'rspec'
+gem 'rspec-rails'
