@@ -6,7 +6,3 @@ Rails.application.routes.draw do
 
   resources :books, auth: true
 end
-
-
-
-# Rails.application.routes.routes.reject{ |a| a.name.nil? or a.name&.start_with?("rails_") }.last.defaults[:auth]

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Sgas
   module Routing
     class AuthHandler
@@ -7,7 +9,7 @@ module Sgas
         @controller = hash[:controller]
         @action     = hash[:action]
         @protect    = !hash[:auth].nil?
-        @opts  = hash[:auth].is_a?(Hash) ? hash[:auth] : nil
+        @opts       = hash[:auth].is_a?(Hash) ? hash[:auth] : nil
       end
 
       def protected?
