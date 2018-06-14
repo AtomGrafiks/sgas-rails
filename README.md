@@ -8,7 +8,7 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sgas-middleware'
+gem 'sgas-rails'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install sgas-rails-middleware
+$ gem install sgas-rails
 ```
 
 ## Contributing
