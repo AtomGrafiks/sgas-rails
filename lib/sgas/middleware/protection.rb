@@ -18,7 +18,7 @@ module Sgas
       # @return [Array(Integer, Hash, #each)]
       # @see    http://rack.rubyforge.org/doc/SPEC.html
       def call(env)
-        if Sgas::Routing::AuthHandler.find_by_path(env['PATH_INFO']).protected?
+        if Sgas::Routing::AuthHandler.find_by_path(env['PATH_INFO'])&.protected?
           Sgas::Middleware::Proxy.new(app).call(env)
         else
           app.call(env)
