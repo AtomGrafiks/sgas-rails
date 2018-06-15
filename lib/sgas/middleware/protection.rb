@@ -19,7 +19,11 @@ module Sgas
       # @see    http://rack.rubyforge.org/doc/SPEC.html
       def call(env)
         if Sgas::Routing::AuthHandler.find_by_path(env['PATH_INFO'])&.protected?
-          Sgas::Middleware::Proxy.new(app).call(env)
+          begin
+            Kernel.const_get(Sgas::Middleware.config.proxy).new(app).call(env)
+          rescue NameError
+            Sgas::Middleware::Proxy.new(app).call(env)
+          end
         else
           app.call(env)
         end
