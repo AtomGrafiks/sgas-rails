@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'faraday'
+
 module Sgas
   module Middleware
     class Proxy
@@ -11,7 +13,7 @@ module Sgas
       def initialize(app)
         @app = app
         @options = options
-        @caller = ::Faraday.new(url: Sgas::Middleware.config.uri || 'http://localhost:8081/')
+        @caller = Faraday.new(url: Sgas::Middleware.config.uri || 'http://localhost:8081/')
       end
 
       ##
