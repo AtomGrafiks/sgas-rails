@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.email       = ['contact@atomgrafiks.com']
   s.homepage    = 'http://github.com/AtomGrafiks/sgas-rails'
   s.summary     = 'Summary of Sgas.'
-  s.description = 'Description of Sgas.'
+  s.description = 'Rails implementation of SGAS Auth Service'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
