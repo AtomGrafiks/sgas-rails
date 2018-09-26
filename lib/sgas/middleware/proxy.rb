@@ -32,7 +32,7 @@ module Sgas
           status, headers, body = app.call(env)
 
           response = Rack::Response.new(body, status, headers)
-          response.set_cookie('T_SID', value: JSON.parse(res.body)['auth_token'], path: '/', expires: Time.now.utc + 2.minutes)
+          response.set_cookie('T_SID', value: JSON.parse(res.body)['auth_token'], path: '/', expires: expire_in)
           return response.finish
         when 204
           app.call(env)
@@ -45,6 +45,10 @@ module Sgas
 
       def need_protection?
         !@request.original_fullpath.start_with?('/rails', '/robots')
+      end
+      
+      def expire_in
+         Time.now.utc + 2.hours
       end
 
       def session_check
