@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'rails', '~> 5.2.0'
+  s.add_dependency 'rails', '~> 6.0.0.rc1'
   s.add_dependency 'faraday', '~> 0.15'
 end
